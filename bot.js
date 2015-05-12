@@ -1,7 +1,18 @@
 var HTTPS = require('https');
-var cool = 'Ugh you are a face';
+var cool = {};
+cool[1] ='Hi';
+cool[2] ='Hey';
+cool[3] ='Homedog Im busy';
+cool[4] ='call you in a bit...';
+cool[5] ='Hey--I wish to speak with you...but later';
+cool[6] ='YES MADAME?';
+cool[7] ='A plague on this weather!!!!';
 
 var botID = process.env.BOT_ID;
+
+function randomIntInc (low, high) {
+    return Math.floor(Math.random() * (high - low + 1) + low);
+}
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
@@ -21,7 +32,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool;
+  botResponse = cool[randomIntInc(1,10)];
 
   options = {
     hostname: 'api.groupme.com',
