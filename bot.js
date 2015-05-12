@@ -7,6 +7,10 @@ cool[4] ='call you in a bit...';
 cool[5] ='Hey--I wish to speak with you...but later';
 cool[6] ='YES MADAME?';
 cool[7] ='A plague on this weather!!!!';
+cool[8] ='Kind of want your chicken keema';
+cool[9] ='Yes';
+cool[10] ='Doing well. Will contact you later';
+cool[11] ='Let me be';
 
 var botID = process.env.BOT_ID;
 
@@ -16,7 +20,7 @@ function randomIntInc (low, high) {
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^Hi Didi|Kutti/i;
+      botRegex = /^Hi Didi|Kutti$/i;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -32,7 +36,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool[randomIntInc(1,10)];
+  botResponse = cool[randomIntInc(1,11)];
 
   options = {
     hostname: 'api.groupme.com',
