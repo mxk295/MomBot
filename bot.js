@@ -20,7 +20,7 @@ function randomIntInc (low, high) {
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^Hi Didi|Kutti|Malsi$/i;
+      botRegex = /^Hi|Hey Didi|Kutti|Malsi|Dede$/i;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
