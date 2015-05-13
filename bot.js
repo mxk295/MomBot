@@ -11,6 +11,12 @@ cool[8] ='Kind of want your chicken keema';
 cool[9] ='Yes';
 cool[10] ='Doing well. Will contact you later';
 cool[11] ='Let me be';
+cool[12] = '!HEY!';
+cool[13] = '!!!';
+cool[14] = 'Beep Beep';
+cool[15] = 'Taking a nap';
+cool[16] = '...stop';
+cool[17] = '...';
 
 var botID = process.env.BOT_ID;
 
@@ -36,7 +42,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool[randomIntInc(1,11)];
+  botResponse = cool[randomIntInc(1,17)];
 
   options = {
     hostname: 'api.groupme.com',
