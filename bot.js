@@ -1,22 +1,21 @@
 var HTTPS = require('https');
-var cool = {};
-cool[1] ='Hi';
-cool[2] ='Hey';
-cool[3] ='Homedog Im busy';
-cool[4] ='call you in a bit...';
-cool[5] ='Hey--I wish to speak with you...but later';
-cool[6] ='YES MADAME?';
-cool[7] ='A plague on this weather!!!!';
-cool[8] ='Kind of want your chicken keema';
-cool[9] ='Yes';
-cool[10] ='Doing well. Will contact you later';
-cool[11] ='Let me be';
-cool[12] = '!HEY!';
-cool[13] = '!!!';
-cool[14] = 'Beep Beep';
-cool[15] = 'Taking a nap';
-cool[16] = '...stop';
-cool[17] = '...';
+var cool = ['Hi', 
+'Hey', 
+'Homedog Im busy',
+'call you in a bit...',
+'Hey--',
+'YES MADAME?',
+'A plague on this weather!!!!',
+'Kind of want your chicken keema',
+'Yes',
+'Doing well. Will contact you later',
+'Let me be',
+'!HEY!',
+'!!!',
+'Beep Beep',
+'Taking a nap',
+'...stop',
+'...'];
 
 var botID = process.env.BOT_ID;
 
@@ -26,7 +25,7 @@ function randomIntInc (low, high) {
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^Hi|Hey Didi|Kutti|Malsi|Dede$/i;
+      botRegex = /^(Hi|Hey) (Didi|Kutti|Malsi|Dede)$/i;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
