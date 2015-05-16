@@ -37,7 +37,7 @@ function respond() {
     this.res.end();
   }
 }
-
+setTimeout(
 function postMessage() {
   var botResponse, options, body, botReq;
 
@@ -52,9 +52,9 @@ function postMessage() {
   body = {
     "bot_id" : botID,
     "text" : botResponse
-  };
+  })randomIntInc (60000, 300000);
 
-  setTimeout(console.log('sending ' + botResponse + ' to ' + botID), randomIntInc (60000, 300000));
+  console.log('sending ' + botResponse + ' to ' + botID);
 
   botReq = HTTPS.request(options, function(res) {
       if(res.statusCode == 202) {
