@@ -18,6 +18,7 @@ var cool = ['Hi',
 '...',
 'chatting with E. Wes',
 'burning some bridges... need both hands for matches'];
+
 var MAX_RESPONSE_TIME = 1000*60*5;
 var MIN_RESPONSE_TIME= 1000*60*1;
 
@@ -36,7 +37,7 @@ function respond() {
     this.res.writeHead(200);
     var response_time = randomIntInc(MIN_RESPONSE_TIME, MAX_RESPONSE_TIME);
     response_time_check=response_time;
-    setTimeout(postMessage(), response_time);
+    setTimeout(postMessage, response_time);
     //postMessage();
     this.res.end();
   } else {
