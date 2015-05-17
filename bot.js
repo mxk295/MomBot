@@ -15,7 +15,9 @@ var cool = ['Hi',
 'Beep Beep',
 'Taking a nap',
 '...stop',
-'...'];
+'...',
+'chatting with E. Wes',
+'burning some bridges... need both hands for matches'];
 var MAX_RESPONSE_TIME = 1000*60*5;
 var MIN_RESPONSE_TIME= 1000*60*1;
 
@@ -33,8 +35,8 @@ function respond() {
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
-   // setTimeout(postMessage(), randomIntinc(MIN_RESPONSE_TIME, MAX_RESPONSE_TIME));
-    postMessage();
+    setTimeout(postMessage(), response_time);
+    //postMessage();
     this.res.end();
   } else {
     console.log("don't care");
