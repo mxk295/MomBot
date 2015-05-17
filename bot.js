@@ -16,6 +16,8 @@ var cool = ['Hi',
 'Taking a nap',
 '...stop',
 '...'];
+var MAX_RESPONSE_TIME = 1000*60*5;
+var MIN_RESPONSE_TIME= 1000*60*1;
 
 var botID = process.env.BOT_ID;
 
@@ -29,7 +31,7 @@ function respond() {
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
-    postMessage();
+    setTimeout(postMessage(), randomIntinc(MIN_RESPONSE_TIME, MAX_RESPONSE_TIME));
     this.res.end();
   } else {
     console.log("don't care");
