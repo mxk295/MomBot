@@ -25,7 +25,7 @@ function randomIntInc (low, high) {
     return Math.floor(Math.random() * (high - low + 1) + low);
 }
 
-var response_time = randomIntinc(MIN_RESPONSE_TIME, MAX_RESPONSE_TIME);
+var response_time = randomIntInc(MIN_RESPONSE_TIME, MAX_RESPONSE_TIME);
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
