@@ -41,7 +41,7 @@ setTimeout(
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool[rand.cool.length()];
+  botResponse = cool[randomIntInc (1, 17)];
 
   options = {
     hostname: 'api.groupme.com',
