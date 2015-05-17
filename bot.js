@@ -46,7 +46,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool[randomIntInc(1,cool.length)] + response_time;
+  botResponse = cool[randomIntInc(1,cool.length)];
 
   options = {
     hostname: 'api.groupme.com',
