@@ -52,7 +52,7 @@ function postMessage() {
   body = {
     "bot_id" : botID,
     "text" : botResponse
-  })randomIntInc (60000, 300000);
+  },randomIntInc (60000, 300000));
 
   console.log('sending ' + botResponse + ' to ' + botID);
 
