@@ -31,7 +31,8 @@ function respond() {
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
-    setTimeout(postMessage(), randomIntinc(MIN_RESPONSE_TIME, MAX_RESPONSE_TIME));
+   // setTimeout(postMessage(), randomIntinc(MIN_RESPONSE_TIME, MAX_RESPONSE_TIME));
+    postMessage();
     this.res.end();
   } else {
     console.log("don't care");
