@@ -18,8 +18,6 @@ var cool = ['Hi',
 '...'];
 
 var botID = process.env.BOT_ID;
-var MAX_RESPONSE_TIME = 60*100*5;
-var MIN_RESPONSE_TIME = 60*100*1;
 
 function randomIntInc (low, high) {
     return Math.floor(Math.random() * (high - low + 1) + low);
@@ -31,8 +29,7 @@ function respond() {
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
-    postmessage;
-    //setTimeOut(postMessage, randomIntInc (MIN_RESPONSE_TIME, MAX_RESPONSE_TIME)) ;
+    postMessage();
     this.res.end();
   } else {
     console.log("don't care");
@@ -44,8 +41,8 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  //botResponse = cool[randomIntInc (1, cool.length)];
-  botResponse = cool[4];
+  botResponse = cool[randomIntInc(1,17)];
+
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
