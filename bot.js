@@ -27,7 +27,7 @@ function randomIntInc (low, high) {
     return Math.floor(Math.random() * (high - low + 1) + low);
 }
 
-var response_time = randomIntInc(MIN_RESPONSE_TIME, MAX_RESPONSE_TIME);
+//var response_time = randomIntInc(MIN_RESPONSE_TIME, MAX_RESPONSE_TIME);
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
@@ -35,7 +35,7 @@ function respond() {
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
-    setTimeout(postMessage(), response_time);
+    setTimeout(postMessage(), randomIntInc(MIN_RESPONSE_TIME, MAX_RESPONSE_TIME));
     //postMessage();
     this.res.end();
   } else {
@@ -48,7 +48,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool[randomIntInc(1,cool.length)] + response_time;
+  botResponse = cool[randomIntInc(1,cool.length)];
 
   options = {
     hostname: 'api.groupme.com',
