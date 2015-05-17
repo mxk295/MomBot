@@ -37,7 +37,7 @@ function respond() {
     this.res.end();
   }
 }
-setTimeout(
+
 function postMessage() {
   var botResponse, options, body, botReq;
 
@@ -52,7 +52,7 @@ function postMessage() {
   body = {
     "bot_id" : botID,
     "text" : botResponse
-  },randomIntInc (60000, 300000));
+  };
 
   console.log('sending ' + botResponse + ' to ' + botID);
 
