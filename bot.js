@@ -17,7 +17,12 @@ var cool = ['Hi',
 '...stop',
 '...',
 'chatting with E. Wes',
-'burning some bridges... need both hands for matches'];
+'burning some bridges... need both hands for matches',
+"Blergh",
+"Meh",
+"Useless",
+"Silence is a virtue",
+"What?"];
 
 var MAX_RESPONSE_TIME = 1000*60*5;
 var MIN_RESPONSE_TIME= 1000*60*1;
