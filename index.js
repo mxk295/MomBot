@@ -37,5 +37,5 @@ function ping() {
 
 function status_check() {
   this.res.writeHead(200);
-  this.res.end(Date.now() + "The server has been pinged" );
+  this.res.end(Date.now() /1000 |0 + " The server has been pinged" );
 }
