@@ -9,6 +9,9 @@ router = new director.http.Router({
   '/' : {
     post: bot.respond,
     get: ping
+  },
+  '/wesley': {
+    get: wesley_respond
   }
 });
 
@@ -30,4 +33,9 @@ server.listen(port);
 function ping() {
   this.res.writeHead(200);
   this.res.end("Hey, I'm Cool Guy.");
+}
+
+function wesley_respond() {
+  this.res.writeHead(200);
+  this.res.end("Hey, I'm a Malavika.");
 }
