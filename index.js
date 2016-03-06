@@ -10,8 +10,8 @@ router = new director.http.Router({
     post: bot.respond,
     get: ping
   },
-  '/wesley': {
-    get: wesley_respond
+  '/status': {
+    get: status_check
   }
 });
 
@@ -35,7 +35,7 @@ function ping() {
   this.res.end("Hey, I'm Cool Guy.");
 }
 
-function wesley_respond() {
+function status_check() {
   this.res.writeHead(200);
-  this.res.end("Hey, I'm a Malavika.");
+  this.res.end(Date.now() + "The server has been pinged" );
 }
