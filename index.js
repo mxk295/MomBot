@@ -35,7 +35,3 @@ function ping() {
   this.res.end("Hey, I'm Cool Guy.");
 }
 
-function status_check() {
-  this.res.writeHead(200);
-  this.res.end(Date.now() /1000 |0 + " The server has been pinged" );
-}
